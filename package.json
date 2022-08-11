@@ -67,9 +67,10 @@
         "start:web": "vscode-test-web --extensionDevelopmentPath=. .",
         "prettier": "prettier --write .",
         "prettier:staged": "pretty-quick --staged",
-        "vscode:prepublish": "build",
-        "package": "vsce package",
-        "publish": "vsce publish",
+        "vscode:prepublish": "yarn build",
+        "package": "vsce package --yarn",
+        "package:list": "vsce ls --yarn",
+        "publish": "vsce publish --yarn",
         "clean": "rm -rf out/ dist/"
     }
 }
