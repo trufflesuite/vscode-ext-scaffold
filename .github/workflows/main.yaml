@@ -1,4 +1,4 @@
-name: Ethers Mode Workflow
+name: VS Code Extension Scaffold Workflow
 
 on:
   # We want to trigger these jobs in every branch.
