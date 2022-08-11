@@ -1,0 +1,75 @@
+{
+    "name": "vscode-ext-scaffold",
+    "displayName": "VS Code Extension Scaffold",
+    "description": "Hello VS Code Extension Scaffold",
+    "icon": "icon.drawio.png",
+    "version": "0.0.1",
+    "publisher": "trufflesuite",
+    "private": true,
+    "preview": true,
+    "license": "MIT",
+    "main": "./dist/main",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/trufflesuite/vscode-ext-scaffold"
+    },
+    "engines": {
+        "vscode": "^1.26.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "ethereum",
+        "blockchain",
+        "web3"
+    ],
+    "activationEvents": [
+        "onCommand:vscode-ext-scaffold.hello"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "title": "Sample Command",
+                "command": "vscode-ext-scaffold.hello",
+                "category": "VS Code Extension Scaffold"
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/chai": "^4.3.1",
+        "@types/chai-as-promised": "^7.1.5",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.1",
+        "@types/node": "^12.12.0",
+        "@types/vscode": "^1.26.0",
+        "@typescript-eslint/eslint-plugin": "^5.33.0",
+        "@typescript-eslint/parser": "^5.33.0",
+        "@vscode/test-web": "^0.0.29",
+        "chai": "^4.3.6",
+        "chai-as-promised": "^7.1.1",
+        "esbuild": "^0.14.38",
+        "eslint": "^8.21.0",
+        "husky": "^8.0.1",
+        "mocha": "^9.2.2",
+        "prettier": "^2.7.1",
+        "pretty-quick": "^3.1.3",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.5.5",
+        "vsce": "^2.7.0"
+    },
+    "scripts": {
+        "prepare": "husky install",
+        "compile": "tsc",
+        "lint": "eslint . --ext .ts",
+        "build": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node --sourcemap --minify",
+        "test": "mocha",
+        "start:web": "vscode-test-web --extensionDevelopmentPath=. .",
+        "prettier": "prettier --write .",
+        "prettier:staged": "pretty-quick --staged",
+        "vscode:prepublish": "build",
+        "package": "vsce package",
+        "publish": "vsce publish",
+        "clean": "rm -rf out/ dist/"
+    }
+}
