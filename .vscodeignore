@@ -1,6 +1,6 @@
 .github/**
+.husky/**
 .vscode/**
-.vscode-test-web/**
 dist/main.js.map
 dist/web.js.map
 node_modules
@@ -9,4 +9,6 @@ out/**
 src/**
 test/**
 .gitignore
+.mocharc.js
+.prettierignore
 tsconfig.json
